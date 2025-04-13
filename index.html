@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toik Zakiyudin - Profil</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+  body.light-mode {
+  background: linear-gradient(to bottom right, #f0f0f0, #dcdcdc);
+  color: #111;
+}
+
+body.light-mode .bio {
+  color: #444;
+}
+
+body.light-mode .links a {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #111;
+}
+
+body.light-mode .links a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .testimoni,
+body.light-mode .github-section {
+  background-color: #f8f8f8;
+  color: #111;
+}
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #0f2027, #203a43);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+    }
+
+    .statistik {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .statistik .card {
+      background-color: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .links a {
+      display: block;
+      margin: 0.5rem auto;
+      padding: 0.75rem 1rem;
+      max-width: 300px;
+      text-align: center;
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: rgba(255,255,255,0.15);
+    }
+
+    .about, .contact, .tools, .experience {
+      padding: 3rem 1rem;
+    }
+
+    .footer {
+      background-color: #0d1b2a;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .qr-copy {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-copy {
+      margin-top: 1rem;
+    }
+
+    /* Light Mode */
+    body.light-mode {
+      background: #f4f4f4;
+      color: #111;
+    }
+
+    body.light-mode .links a,
+    body.light-mode .statistik .card,
+    body.light-mode .footer,
+    body.light-mode .btn-outline-light {
+      background-color: white;
+      color: #111 !important;
+      border-color: #ccc;
+    }
+
+    body.light-mode .progress-bar {
+      color: white;
+    }
+
+    body.light-mode .btn-outline-light:hover {
+      background-color: #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .hero img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .progress-bar {
+        font-size: 0.8rem;
+      }
+
+      .timeline h5 {
+        font-size: 1.1rem;
+      }
+
+      .qr-copy img {
+        width: 120px;
+        height: auto;
+      }
+    }
+  
+/* Splash Screen */
+#splash-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #0f2027;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#splash-screen img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.whatsapp-float img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+</style>
+</head>
+<body >
+  <button id="toggle-mode" class="btn btn-light position-fixed top-0 end-0 m-3 z-3">
+    🌙
+  </button>
+  
+  <div id="splash-screen"><img alt="Loading" src="img/aku.jpg"/><p>Memuat halaman...</p></div>
+<section class="hero" data-aos="fade-down">
+  <div class="profile-pic" data-aos="zoom-in">
+    <img alt="Foto Profil" src="img/aku.jpg"/>
+  </div>
+<h1 class="name" data-aos="fade-up">Toik Zakiyudin</h1>
+<p class="bio" data-aos="fade-up">Mahasiswa Sistem Informasi & Software Engineer 🚀</p>
+<a class="btn btn-outline-light btn-sm mt-2" download="" href="cv/toik-cv.pdf">Download CV</a>
+</section>
+<div class="text-center mb-4">
+
+</div>
+<section class="statistik container" data-aos="fade-up">
+<div class="row justify-content-center">
+<div class="col-6 col-md-4 mb-3">
+<div class="card p-3">
+<h5>📺 YouTube</h5>
+<p>1.2K Followers</p>
+</div>
+</div>
+<div class="col-6 col-md-4 mb-3">
+<div class="card p-3">
+<h5>👀 Kunjungan</h5>
+<p>8.3K Views</p>
+</div>
+</div>
+</div>
+</section>
+<section class="links container text-center" data-aos="fade-up">
+  <div class="links" data-aos="fade-right">
+    ...
+  </div>  
+
+  <!-- Bio -->
+<p class="bio" data-aos="fade-up">Mahasiswa Sistem Informasi & Software Engineer 🚀</p>
+
+<!-- Tentang Saya -->
+<section class="about-me py-4" data-aos="fade-up">
+  <div class="container">
+    <h2 class="mb-3">Tentang Saya</h2>
+    <p>
+      Saya adalah mahasiswa Sistem Informasi dengan minat besar dalam pengembangan web dan teknologi. Saat ini saya fokus mengembangkan berbagai proyek website, termasuk platform marketplace dan profil digital. Saya suka belajar hal baru, terutama seputar frontend dan backend development.
+    </p>
+  </div>
+</section>
+
+  
+  <h3>🌐 Tautan Sosial</h3>
+  <div class="links">
+    <a href="https://www.youtube.com/@toikzakiyudinofficial5121" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+        <path d="M19.615 3.184c-1.676-.53-8.41-.53-8.41-.53s-6.735 0-8.41.53c-1.397.44-2.49 1.57-2.778 2.992C0 8.75 0 12 0 12s0 3.25.017 5.824c.288 1.422 1.38 2.552 2.778 2.992C3.065 21.816 9.8 21.816 9.8 21.816s6.734 0 8.41-.53c1.397-.44 2.49-1.57 2.778-2.992.017-2.574.017-5.824.017-5.824s0-3.25-.017-5.824c-.288-1.422-1.38-2.552-2.778-2.992zM9.8 15.558V8.442L15.684 12 9.8 15.558z"/>
+      </svg>
+      YouTube
+    </a>
+       
+    <a href="https://instagram.com/toik_zakiyudin" target="_blank">
+      <i data-feather="instagram"></i> Instagram
+    </a>
+    <a href="https://linkedin.com/in/toikzakiyudin" target="_blank">
+      <i data-feather="linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/mastzy" target="_blank">
+      <i data-feather="github"></i> GitHub
+    </a>
+    <a href="https://toikzakiyudin.com" target="_blank">
+      <i data-feather="link"></i> Portfolio
+    </a>
+  </div>
+  
+<!--statistik github-->
+<div class="github-stats container" data-aos="fade-up">
+  ...
+</div>
+<div class="github-stats container text-center my-5">
+  <h4 class="mb-4"><i data-feather="github"></i> Statistik GitHub</h4>
+  <div class="row justify-content-center">
+    <div class="col-6 col-md-4">
+      <div class="card bg-dark text-white border-light mb-3">
+        <div class="card-body">
+          <i data-feather="folder" class="mb-2" style="width:24px;height:24px;"></i>
+          <h5 class="card-title">Repositori Publik</h5>
+          <p class="card-text fs-4" id="repo-count">...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4">
+      <div class="card bg-dark text-white border-light mb-3">
+        <div class="card-body">
+          <i data-feather="users" class="mb-2" style="width:24px;height:24px;"></i>
+          <h5 class="card-title">Followers</h5>
+          <p class="card-text fs-4" id="follower-count">...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Statistik Kunjungan -->
+<div class="visit-counter mt-4 text-center text-muted" data-aos="fade-up">
+  👁️ Halaman ini telah dikunjungi <span id="visit-count">...</span> kali.
+</div>
+
+</section>
+<section class="about container text-center" data-aos="fade-left">
+<h3>👨‍💻 Tentang Saya</h3>
+<p>Saya seorang mahasiswa Sistem Informasi dengan minat besar dalam pengembangan perangkat lunak dan teknologi web. Saat ini aktif membangun berbagai proyek dan belajar teknologi baru setiap hari.</p>
+</section>
+<section class="tools container" data-aos="fade-right">
+<h3 class="text-center mb-4">🛠️ Skill &amp; Tools</h3>
+<div class="mb-3">
+<label>HTML &amp; CSS</label>
+<div class="progress">
+<div class="progress-bar bg-info" role="progressbar" style="width: 90%">90%</div>
+</div>
+</div>
+<div class="mb-3">
+<label>JavaScript</label>
+<div class="progress">
+<div class="progress-bar bg-success" role="progressbar" style="width: 80%">80%</div>
+</div>
+</div>
+<div class="mb-3">
+<label>Laravel</label>
+<div class="progress">
+<div class="progress-bar bg-danger" role="progressbar" style="width: 75%">75%</div>
+</div>
+</div>
+<div class="mb-3">
+<label>React</label>
+<div class="progress">
+<div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 60%">60%</div>
+</div>
+</div>
+</section>
+<section class="experience container" data-aos="fade-up">
+<h3 class="text-center mb-4">📈 Pengalaman</h3>
+<div class="timeline">
+<div class="mb-3">
+<h5>Magang Web Developer</h5>
+<p class="text-muted">Jan 2024 - Mar 2024</p>
+<p>Membangun dashboard admin untuk sistem informasi sekolah menggunakan Laravel &amp; Bootstrap.</p>
+</div>
+<div class="mb-3">
+<h5>Freelance Landing Page</h5>
+<p class="text-muted">2023</p>
+<p>Mengerjakan beberapa landing page promosi produk UMKM dengan HTML, CSS, dan JS.</p>
+</div>
+</div>
+</section>
+<section class="contact container" data-aos="zoom-in">
+<h3 class="text-center mb-4">📬 Kontak Saya</h3>
+<form action="https://formspree.io/f/mayvvpwb" class="row g-3" method="POST">
+<div class="col-md-6">
+<input class="form-control" name="name" placeholder="Nama" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<input class="form-control" name="email" placeholder="Email" required="" type="email"/>
+</div>
+<div class="col-12">
+<textarea class="form-control" name="message" placeholder="Pesan" required="" rows="4"></textarea>
+</div>
+<div class="col-12 text-center">
+<button class="btn btn-light" type="submit">Kirim</button>
+</div>
+</form>
+</section>
+<section class="qr-copy container text-center" data-aos="zoom-in">
+<h4>🔗 Bagikan Profil Ini</h4>
+<img alt="QR Code" src="https://api.qrserver.com/v1/create-qr-code/?data=https://toikzakiyudin.com&amp;size=150x150"/>
+<br/>
+<button class="btn btn-outline-light btn-copy" onclick="copyLink()">Salin Link</button>
+</section>
+<footer class="footer">
+    © 2025 Toik Zakiyudin. Semua hak dilindungi.
+  </footer>
+  <!--feathers icons-->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+    feather.replace();
+
+    function copyLink() {
+      navigator.clipboard.writeText("https://toikzakiyudin.com");
+      alert("Link disalin ke clipboard!");
+    }
+
+    document.getElementById('toggleMode').addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script><script>
+window.addEventListener('load', () => {
+  const splash = document.getElementById('splash-screen');
+  splash.style.opacity = '0';
+  setTimeout(() => splash.style.display = 'none', 500);
+});
+</script>
+<!--js github-->
+<script>
+  fetch("https://api.github.com/users/mastzy")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("repo-count").textContent = data.public_repos;
+      document.getElementById("follower-count").textContent = data.followers;
+    })
+    .catch(error => console.error("Gagal ambil data GitHub:", error));
+</script>
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  fetch('https://api.countapi.xyz/hit/toikzakiyudin-profile/visits')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visit-count').textContent = data.value.toLocaleString();
+    });
+</script>
+<!-- Testimoni / Quotes Tokoh -->
+<section class="testimoni py-5 bg-dark" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-white mb-4">Inspirasi</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4">
+          <blockquote class="blockquote mb-0">
+            <p>"Jangan pernah menyerah karena biasanya itu adalah langkah terakhir sebelum kesuksesan."</p>
+            <footer class="blockquote-footer mt-2">B.J. Habibie</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const toggleBtn = document.getElementById('toggle-mode');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌞' : '🌙';
+  });
+</script>
+<a href="https://wa.me/62882008985893" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Chat via WhatsApp">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+</a>
+<!-- Lokasi Saya -->
+<section class="lokasi py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="mb-4">Lokasi Saya</h2>
+    <p>Saya berdomisili di <strong>Kaliwedi, Kebasen, Banyumas</strong></p>
+    <div class="map-responsive">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.1234567890123!2d109.23222!3d-7.55778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e65587ec25d99c1%3A0x351b7bff7fd67d6f!2sWarung%20Beras%20Wafiah!5e0!3m2!1sid!2sid!4v1712841696797!5m2!1sid!2sid" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
